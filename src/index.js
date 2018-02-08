@@ -15,6 +15,8 @@ import Login from './pages/login/index.js'
 import Register from './pages/register/index.js'
 import Genius from './pages/genius/index.js'
 import Boss from './pages/boss/index.js'
+import BossInfo from './pages/BossInfo/index.js'
+import GeniusInfo from './pages/GeniusInfo/index.js'
 // authrouter.js
 import AuthRouter from './component/authrouter/authrouter.js'
 // import DevTools from './component/devTools/devTools'
@@ -31,6 +33,8 @@ ReactDom.render((
                 <Route path='/register' component={Register}></Route>
                 <Route path='/genius' component={Genius}></Route>
                 <Route path='/boss' component={Boss}></Route>
+                <Route path='/bossinfo' component={BossInfo}></Route>
+                <Route path='/geniusinfo' component={GeniusInfo}></Route>
             </div>
         </Router>
     </Provider>

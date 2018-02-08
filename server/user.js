@@ -95,4 +95,27 @@ router.post('/login', (req, res) => {
 	})
 })
 
+// 完善信息时保存数据
+router.post('/update',(req,res)=>{
+	const {userid}=req.cookies
+	if(!userid){
+		res.json({code:1})
+	}else{
+		const body=req.body;
+		User.findByIdAndUpdate(userid,body,function(err,doc){
+			if(!err){
+				//合并对象
+				const data=Object.assign({},{
+					user:doc.user,
+					type:doc.type
+				},body)
+				res.json({code:0,data})	
+			}else{
+				res.json({code:1,msg:'后端出错了'})
+			}
+			
+		})
+	}
+})
+
 module.exports = router

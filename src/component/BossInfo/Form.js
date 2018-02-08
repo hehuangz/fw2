@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import { List, InputItem, TextareaItem, Button } from 'antd-mobile'
 import SelectAvatar from './SelectAvatar'
 import './Styles.css'
+import { connect } from 'react-redux'
+import { update } from '../../redux/user.redux'
+import { Redirect } from 'react-router-dom'
+@connect(
+    state => state.user,
+    { update }
+)
 class Form extends Component {
     constructor(props) {
         super(props)
@@ -19,11 +26,14 @@ class Form extends Component {
         })
     }
     save() {
-        console.log(this.state)
+        this.props.update(this.state)
     }
     render() {
+        const path = this.props.location.pathname;
+        const redirect = this.props.redirectTo;
         return (
             <div>
+                {redirect && path !== redirect ? <Redirect to={redirect}></Redirect> : null}
                 <List >
                     <div className='_avator'>我的头像：<img src={this.state.avator} alt="" /></div>
                     <SelectAvatar select={(v) => this.handleChange('avator', v)}></SelectAvatar>
@@ -38,7 +48,7 @@ class Form extends Component {
                         onChange={(v) => this.handleChange('desc', v)}
                     />
                 </List>
-                <Button onClick={this.save}>保存</Button>
+                <Button onClick={() => this.save()}>保存</Button>
             </div>
         )
     }
