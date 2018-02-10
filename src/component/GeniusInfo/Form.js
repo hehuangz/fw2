@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { List, InputItem, TextareaItem, Button } from 'antd-mobile'
 import SelectAvatar from '../Common/SelectAvatar'
-import './Styles.css'
 import { connect } from 'react-redux'
 import { update } from '../../redux/user.redux'
 import { Redirect } from 'react-router-dom'

@@ -8,15 +8,15 @@ import { Provider } from 'react-redux'
 // import { counter } from './index.redux'
 // import reducers from './reducer.js'
 // 路由
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './config.js'
+import './component/Common/Styles.css'//公共组件的样式
 // 登陆页面
 import Login from './pages/login/index.js'
 import Register from './pages/register/index.js'
-import Genius from './pages/genius/index.js'
-import Boss from './pages/boss/index.js'
 import BossInfo from './pages/BossInfo/index.js'
 import GeniusInfo from './pages/GeniusInfo/index.js'
+import DashBoard from './pages/DashBoard/DashBoard.js'
 // authrouter.js
 import AuthRouter from './component/authrouter/authrouter.js'
 // import DevTools from './component/devTools/devTools'
@@ -29,12 +29,13 @@ ReactDom.render((
             <div>
                 {/* <DevTools /> */}
                 <AuthRouter></AuthRouter>
-                <Route path='/login' component={Login}></Route>
-                <Route path='/register' component={Register}></Route>
-                <Route path='/genius' component={Genius}></Route>
-                <Route path='/boss' component={Boss}></Route>
-                <Route path='/bossinfo' component={BossInfo}></Route>
-                <Route path='/geniusinfo' component={GeniusInfo}></Route>
+                <Switch>
+                    <Route path='/login' component={Login}></Route>
+                    <Route path='/register' component={Register}></Route>
+                    <Route path='/bossinfo' component={BossInfo}></Route>
+                    <Route path='/geniusinfo' component={GeniusInfo}></Route>
+                    <Route component={DashBoard}></Route>
+                </Switch>
             </div>
         </Router>
     </Provider>
