@@ -1,6 +1,6 @@
-// boss首页
+// boss完善信息页
 import React from 'react'
-import NavBar from '../../component/BossInfo/NavBar'
+import NavBar from '../../component/Common/NavBar'
 import Form from '../../component/BossInfo/Form'
 class Index extends React.Component {
     constructor(props) {

@@ -29,7 +29,8 @@ export default function user(state = initState, action) {
 function ErrorMsg(msg) {
 	return { msg, type: ERROR_MSG }
 }
-export function authSuccess(data) {
+export function authSuccess(obj) {
+	const { pwd, ...data } = obj
 	return { type: AUTH_SUCCESS, payload: data }
 }
 export function Register({ user, pwd, repeatPwd, type }) {

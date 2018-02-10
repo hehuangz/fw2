@@ -1,7 +1,7 @@
-// boss首页
+// 牛人完善信息页
 import React from 'react'
-import NavBar from '../../component/BossInfo/NavBar'
-import Form from '../../component/BossInfo/Form'
+import NavBar from '../../component/Common/NavBar'
+import Form from '../../component/GeniusInfo/Form'
 class Index extends React.Component {
     constructor(props) {
         super(props)
@@ -9,7 +9,7 @@ class Index extends React.Component {
     render() {
         return (
             <div className='v-bossinfo'>
-                <NavBar title='BOSS完善信息页' />
+                <NavBar title='牛人完善信息页' />
                 <Form location={this.props.location}></Form>
             </div>
         )
