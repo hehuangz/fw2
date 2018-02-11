@@ -32,7 +32,6 @@ class Index extends React.Component {
         this.props.history.push('/register')
     }
     render() {
-        const { getFieldProps } = this.props.form;
         return (
             <div className="flex-container">
                 {this.props.msg ? <p>{this.props.msg}</p> : null}

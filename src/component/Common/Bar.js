@@ -20,7 +20,7 @@ class Bar extends Component {
                             key={v.title}
                             icon={<i className={`iconfont ${v.icon}`} />}
                             selectedIcon={<i className={`iconfont ${v.icon}`} />}
-                            selected={pathname && pathname == v.path}
+                            selected={pathname && pathname === v.path}
                             onPress={() => history.push(v.path)}
                         >
                         </TabBar.Item>

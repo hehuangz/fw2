@@ -20,9 +20,6 @@ class DashBoard extends Component {
     static PropType = {
         navArr: PropTypes.array.isRequired
     }
-    constructor(props) {
-        super(props)
-    }
     render() {
         const { pathname } = this.props.location
         const { type } = this.props
@@ -31,14 +28,14 @@ class DashBoard extends Component {
                 path: '/boss',//boss找面试者
                 title: '牛人',
                 icon: 'icon-niuren',
-                hide: type == 'genius',
+                hide: type === 'genius',
                 component: Boss
             },
             {
                 path: '/genius',//面试者找工作
                 title: '岗位',
                 icon: 'icon-755danzi',
-                hide: type == 'boss',
+                hide: type === 'boss',
                 component: Genius
             },
             {
@@ -56,10 +53,12 @@ class DashBoard extends Component {
         ]
         return (
             <div>
-                <NavBar title={navArr.find(v => v.path == pathname) && navArr.find(v => v.path == pathname).title}></NavBar>
-                {navArr.map(v => (
-                    <Route key={v.path} path={v.path} component={v.component} />
-                ))}
+                <NavBar title={navArr.find(v => v.path === pathname) && navArr.find(v => v.path === pathname).title}></NavBar>
+                <Switch>
+                    {navArr.map(v => (
+                        <Route key={v.path} path={v.path} component={v.component} />
+                    ))}
+                </Switch>
                 <Bar navArr={navArr} pathname={pathname} history={this.props.history}></Bar>
             </div>
         )

@@ -5,9 +5,6 @@ class Index extends Component {
     static propTypes = {
         select: PropTypes.func.isRequired
     }
-    constructor(props) {
-        super(props)
-    }
     render() {
         let arr = []
         for (let i = 1; i <= 14; i++) {
