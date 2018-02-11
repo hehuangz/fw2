@@ -15,7 +15,7 @@ class Form extends Component {
             job: '',
             money: '',
             desc: '',
-            avator: ''
+            avatar: ''
         }
     }
     handleChange(type, val) {
@@ -29,12 +29,12 @@ class Form extends Component {
     render() {
         const path = this.props.location.pathname;
         const redirect = this.props.redirectTo;
+        const Avatar = this.state.avatar ? <div className='_avator'>我的头像：<img src={this.state.avatar} alt="" /></div> : '请选择头像：'
         return (
             <div>
                 {redirect && path !== redirect ? <Redirect to={redirect}></Redirect> : null}
-                <List >
-                    <div className='_avator'>我的头像：<img src={this.state.avator} alt="" /></div>
-                    <SelectAvatar select={(v) => this.handleChange('avator', v)}></SelectAvatar>
+                <List renderHeader={Avatar}>
+                    <SelectAvatar select={(v) => this.handleChange('avatar', v)}></SelectAvatar>
                     <InputItem onChange={(v) => this.handleChange('job', v)}>求职岗位：</InputItem>
                     <InputItem onChange={(v) => this.handleChange('money', v)}>岗位薪资：</InputItem>
                     <TextareaItem

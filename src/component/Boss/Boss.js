@@ -20,22 +20,22 @@ class Index extends React.Component {
     }
     render() {
         const { data } = this.state
-        console.log(data)
         return (
-            <WingBlank size="lg" style={{ marginBottom: 66 }}>
+            <WingBlank size="lg" style={{ marginBottom: 66 }} className='v-boss-card'>
                 {data.map(v => (
                     <div key={v._id}>
                         <WhiteSpace size="lg" />
                         <Card>
                             <Card.Header
                                 title={v.user}
-                                thumb="https://cloud.githubusercontent.com/assets/1698185/18039916/f025c090-6dd9-11e6-9d86-a4d48a1bf049.png"
-                                extra={<span>this is extra</span>}
+                                thumb={v.avatar}
+                                extra={<span>{v.job}</span>}
+                                className='_header'
                             />
                             <Card.Body>
-                                <div>This is content of `Card`</div>
+                                <div>{v.desc}</div>
                             </Card.Body>
-                            <Card.Footer content="footer content" extra={<div>extra footer content</div>} />
+                            <Card.Footer content={"薪资要求：" + v.money} extra={<div></div>} />
                         </Card>
                     </div>
                 ))}

@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 // 链接mongodb,并且使用react集合，没有会自动新建
 const DB_URL = 'mongodb://127.0.0.1:27017/react'
-mongoose.connect(DB_URL,{
+mongoose.connect(DB_URL, {
     useMongoClient: true
 })
 mongoose.connection.on('connected', function () {
@@ -15,7 +15,8 @@ const models = {
         type: { type: String, require: true },
         avatar: { type: String },
         desc: { type: String },
-        title: { type: String }
+        job: { type: String },
+        money: { type: String },
     },
     chat: {
 

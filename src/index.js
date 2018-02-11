@@ -10,6 +10,7 @@ import { Provider } from 'react-redux'
 // 路由
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './config.js'
+import './component/Styles.css'
 import './component/Common/Styles.css'//公共组件的样式
 // 登陆页面
 import Login from './pages/login/index.js'

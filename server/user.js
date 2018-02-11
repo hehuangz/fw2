@@ -28,7 +28,7 @@ router.get('/info', (req, res) => {
 })
 // 清除所有数据+查找所有数据
 router.get('/list', (req, res) => {
-	// User.remove({}, (err, doc) => {})
+	// User.remove({}, (err, doc) => { })
 	const { type } = req.query
 	User.find({ type }, (err, doc) => {
 		if (!err) {
@@ -114,7 +114,6 @@ router.post('/update', (req, res) => {
 			} else {
 				res.json({ code: 1, msg: '后端出错了' })
 			}
-
 		})
 	}
 })
