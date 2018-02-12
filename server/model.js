@@ -17,6 +17,7 @@ const models = {
         desc: { type: String },
         job: { type: String },
         money: { type: String },
+        company: { type: String }
     },
     chat: {
 
