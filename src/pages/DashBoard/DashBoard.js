@@ -6,12 +6,9 @@ import PropTypes from 'prop-types'
 import { Route, Switch } from 'react-router-dom'
 import Boss from '../../component/Boss/Boss'
 import Genius from '../../component/Genius/Genius'
-
+import Me from '../../component/Me/Me'
 const Msg = () => {
     return <h2>Msg</h2>
-}
-const Me = () => {
-    return <h2>Me</h2>
 }
 @connect(
     state => state.user
@@ -54,12 +51,12 @@ class DashBoard extends Component {
         return (
             <div>
                 <NavBar title={navArr.find(v => v.path === pathname) && navArr.find(v => v.path === pathname).title}></NavBar>
+                <Bar navArr={navArr} pathname={pathname} history={this.props.history}></Bar>
                 <Switch>
                     {navArr.map(v => (
                         <Route key={v.path} path={v.path} component={v.component} />
                     ))}
                 </Switch>
-                <Bar navArr={navArr} pathname={pathname} history={this.props.history}></Bar>
             </div>
         )
     }

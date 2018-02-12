@@ -7,6 +7,7 @@ import getDedirectUrl from '../util.js'
 const ERROR_MSG = 'ERROR_MSG'
 const AUTH_SUCCESS = 'AUTH_SUCCESS'
 const USER_DATA = 'USER_DATA'
+const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS'
 const initState = {
 	redirectTo: '',
 	msg: '',
@@ -22,6 +23,8 @@ export default function user(state = initState, action) {
 			return { ...state, msg: '', redirectTo: getDedirectUrl(action.payload), ...action.payload }
 		case USER_DATA:
 			return { ...state, ...action.payload }
+		case LOGOUT_SUCCESS:
+			return { ...initState, redirectTo: '/login' }
 		default:
 			return state
 	}
@@ -83,4 +86,9 @@ export function update(data) {
 			}
 		})
 	}
+}
+
+// 退出登录，清空redux并跳转
+export function logout() {
+	return { type: LOGOUT_SUCCESS }
 }
