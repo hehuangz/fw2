@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import { Login } from '../../redux/user.redux.js'
 import { Redirect } from 'react-router-dom'
 
+// @本质上是一个高阶组件、
 @connect(
     state => state.user,
     { Login }
