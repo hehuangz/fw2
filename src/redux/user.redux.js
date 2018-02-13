@@ -22,9 +22,9 @@ export default function user(state = initState, action) {
 		case AUTH_SUCCESS:
 			return { ...state, msg: '', redirectTo: getDedirectUrl(action.payload), ...action.payload }
 		case USER_DATA:
-			return { ...state, ...action.payload }
+			return { ...state, redirectTo: '', ...action.payload }
 		case LOGOUT_SUCCESS:
-			return { ...initState, redirectTo: '/login' }
+			return { ...initState, redirectTo: '' }
 		default:
 			return state
 	}

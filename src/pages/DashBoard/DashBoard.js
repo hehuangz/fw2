@@ -7,9 +7,7 @@ import { Route, Switch } from 'react-router-dom'
 import Boss from '../../component/Boss/Boss'
 import Genius from '../../component/Genius/Genius'
 import Me from '../../component/Me/Me'
-const Msg = () => {
-    return <h2>Msg</h2>
-}
+import Msg from '../../component/Msg/Msg'
 @connect(
     state => state.user
 )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import LOGO from '../../component/logo/index.js'
 import { InputItem, Button, WhiteSpace, WingBlank } from 'antd-mobile'
 import 'antd-mobile/dist/antd-mobile.css'
@@ -6,6 +6,7 @@ import { createForm } from 'rc-form';
 import { connect } from 'react-redux'
 import { Login } from '../../redux/user.redux.js'
 import { Redirect } from 'react-router-dom'
+
 @connect(
     state => state.user,
     { Login }
