@@ -6,29 +6,22 @@ import { createForm } from 'rc-form';
 import { connect } from 'react-redux'
 import { Login } from '../../redux/user.redux.js'
 import { Redirect } from 'react-router-dom'
-
+import { HOCForm } from '../../component/Common/HOCForm'
 // @本质上是一个高阶组件、
 @connect(
     state => state.user,
     { Login }
 )
-class Index extends React.Component {
+@HOCForm
+// @HOCForm
+class Index extends Component {
     constructor() {
         super()
-        this.state = {
-            user: '',
-            pwd: ''
-        }
         this.register = this.register.bind(this)
         this.login = this.login.bind(this)
     }
-    handleChange(key, val) {
-        this.setState({
-            [key]: val
-        })
-    }
     login() {
-        this.props.Login(this.state)
+        this.props.Login(this.props.state)
     }
     register() {
         this.props.history.push('/register')
@@ -41,12 +34,12 @@ class Index extends React.Component {
                 <LOGO></LOGO>
                 <WingBlank>
                     <InputItem
-                        onChange={(v) => this.handleChange('user', v)}
+                        onChange={(v) => this.props.handleChange('user', v)}
                     >用户名</InputItem>
                     <WhiteSpace />
                     <InputItem
                         type='password'
-                        onChange={(v) => this.handleChange('pwd', v)}
+                        onChange={(v) => this.props.handleChange('pwd', v)}
                     >密码</InputItem>
                     <WhiteSpace />
                     <Button type='primary' onClick={this.login}>登陆</Button>

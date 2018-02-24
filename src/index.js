@@ -18,6 +18,7 @@ import Register from './pages/register/index.js'
 import BossInfo from './pages/BossInfo/index.js'
 import GeniusInfo from './pages/GeniusInfo/index.js'
 import DashBoard from './pages/DashBoard/DashBoard.js'
+import Chat from './pages/Chat/Chat.js'
 // authrouter.js
 import AuthRouter from './component/authrouter/authrouter.js'
 // import DevTools from './component/devTools/devTools'
@@ -35,6 +36,7 @@ ReactDom.render((
                     <Route path='/register' component={Register}></Route>
                     <Route path='/bossinfo' component={BossInfo}></Route>
                     <Route path='/geniusinfo' component={GeniusInfo}></Route>
+                    <Route path='/chat/:user' component={Chat}></Route>
                     <Route component={DashBoard}></Route>
                 </Switch>
             </div>

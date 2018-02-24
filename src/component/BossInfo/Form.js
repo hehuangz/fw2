@@ -32,8 +32,7 @@ class Form extends Component {
 		const redirect = this.props.redirectTo;
 		const Avator = this.state.avatar
 			? < span className='_avator' > 我的头像：<img src={this.state.avatar} alt="" /></span>
-			: '请选择头像:'
-
+			: '请选择头像:';
 		return (
 			<div>
 				{redirect && path !== redirect ? <Redirect to={redirect}></Redirect> : null}
