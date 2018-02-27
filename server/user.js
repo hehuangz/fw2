@@ -2,6 +2,7 @@ const server = require('express')
 const router = server.Router()
 const Model = require('./model')
 const User = Model.getModel('user')
+const Chat = Model.getModel('chat')
 const utility = require('utility')
 const _filter = { pwd: 0, __v: 0 }//过滤掉、不需要返回的字段
 
@@ -118,4 +119,12 @@ router.post('/update', (req, res) => {
 	}
 })
 
+// 获取聊天数据
+router.get('/chatlist', (req, res) => {
+	Chat.find({}, (err, doc) => {
+		if (!err) {
+			res.json({ code: 0, data: doc })
+		}
+	})
+})
 module.exports = router
