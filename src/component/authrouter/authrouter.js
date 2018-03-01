@@ -12,7 +12,7 @@ import { saveUserData } from '../../redux/user.redux'
 )
 class AuthRouter extends React.Component {
     componentDidMount() {
-        const publicList = ['/login', '/register']
+        const publicList = ['/login', '/register', '/drag']
         const pathname = this.props.location.pathname
         if (publicList.includes(pathname)) {
             return null

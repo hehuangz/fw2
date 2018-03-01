@@ -14,6 +14,7 @@ import './component/Styles.css'
 import './component/Common/Styles.css'//公共组件的样式
 // 登陆页面
 import Login from './pages/login/index.js'
+import Drag from './pages/Drag/Drag.js'
 import Register from './pages/register/index.js'
 import BossInfo from './pages/BossInfo/index.js'
 import GeniusInfo from './pages/GeniusInfo/index.js'
@@ -32,6 +33,7 @@ ReactDom.render((
                 {/* <DevTools /> */}
                 <AuthRouter></AuthRouter>
                 <Switch>
+                    <Route path='/drag' component={Drag}></Route>
                     <Route path='/login' component={Login}></Route>
                     <Route path='/register' component={Register}></Route>
                     <Route path='/bossinfo' component={BossInfo}></Route>
