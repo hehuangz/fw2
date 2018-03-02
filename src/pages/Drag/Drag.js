@@ -1,3 +1,4 @@
+//拖拽组件，具体要求看文档Drag.md
 import React, { Component } from 'react'
 import './Styles.css'
 const Fragment = React.Fragment;
@@ -29,6 +30,7 @@ class Drag extends Component {
                     {this.state.list.map(v => {
                         return <Item>})}
                 </PsortList> */}
+                <Input value={'111'} onChange={this.handleChange}></Input>
             </Fragment>
         )
     }
