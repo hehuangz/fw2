@@ -1,0 +1,24 @@
+    .dustbin {
+        width: 100px;
+        height: 200px;
+        background: #ccc;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+        line-height: 200px;
+    }
+
+    .dragbox {
+        display: inline-block;
+    }
+
+    .draglist {
+        width: 200px;
+        height: 30px;
+        background: orange;
+        margin-bottom:5px;
+    }
+
+    .dragremind {
+        overflow: hidden;
+    }
