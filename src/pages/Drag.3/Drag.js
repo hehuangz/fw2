@@ -35,7 +35,7 @@ export default class Index extends Component {
 								...getblockStyle(provided.isDragging)
 							}}
 						>
-							我是{item.key}
+							我是{item.key}{/* <img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/whfpf%3D135%2C180%2C50/sign=1afaf73405f79052ef4a147e6acee6f9/aa64034f78f0f736959dc8260655b319ebc413b1.jpg" alt="" /> */}
 						</div>
 					)
 				}}
